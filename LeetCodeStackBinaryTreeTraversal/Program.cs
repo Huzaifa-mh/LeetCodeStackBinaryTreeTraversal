@@ -3,8 +3,8 @@
 internal class Program
 {
     private static void Main(string[] args)
-    {
-        string result =ClearDigits("ab12");
+    { 
+        string result = ClearDigits("ab12"); 
         Console.WriteLine(result);
     }
     public static string ClearDigits(string s)
@@ -13,7 +13,7 @@ internal class Program
 
         for (int i = 0; i < s.Length; i++)
         {
-            if (s[i] == '0' || s[i] == '1' || s[i] == '2' || s[i] == '3'|| s[i] == '4' || s[i] == '5' || s[i] == '6' || s[i] == '7' ||    s[i] == '8' || s[i] == '9' )
+            if (s[i] == '0' || s[i] == '1' || s[i] == '2' || s[i] == '3' || s[i] == '4' || s[i] == '5' || s[i] == '6' || s[i] == '7' || s[i] == '8' || s[i] == '9')
             {
                 if (s1.Count > 0)
                 {
@@ -25,7 +25,7 @@ internal class Program
                 s1.Push(s[i]);
             }
         }
-        return s1.ToString();
+        return new string(s1.Reverse().ToArray());
     }
 
     //definition for a binary tree node.
