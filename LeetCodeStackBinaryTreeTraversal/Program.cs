@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using static Program;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -28,6 +30,13 @@
 
         return list;
     }
+    public IList<int> PreorderTraversal(treenode root)
+    {
+        List<int> list = new List<int>();
+        preorder(root, list);
+
+        return list;
+    }
     public void inorder(treenode node, List<int> list)
     {
         if (node == null)
@@ -38,5 +47,16 @@
         list.Add(node.val);
         inorder(node.right, list);
 
+    }
+    public void preorder(treenode node, List<int> list)
+    {
+        if (node == null)
+        {
+            return;
+        }
+
+        list.Add(node.val);
+        preorder(node.left, list);
+        preorder(node.right, list);
     }
 }
