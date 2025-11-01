@@ -37,6 +37,23 @@ internal class Program
 
         return list;
     }
+    public IList<int> PostorderTraversal(treenode root)
+    {
+        List<int> list = new List<int>();
+        postOrder(root, list);
+
+        return list;
+    }
+    public void postOrder(treenode node, List<int> list)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        postOrder(node.left, list);
+        postOrder(node.right, list);
+        list.Add(node.val);
+    }
     public void inorder(treenode node, List<int> list)
     {
         if (node == null)
