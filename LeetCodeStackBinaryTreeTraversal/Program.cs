@@ -65,6 +65,7 @@ internal class Program
         inorder(node.right, list);
 
     }
+
     public void preorder(treenode node, List<int> list)
     {
         if (node == null)
