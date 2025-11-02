@@ -7,6 +7,9 @@ internal class Program
         string result = ClearDigits("ab12"); 
         Console.WriteLine(result);
     }
+    //this is not a tree problem.
+    //we can improve this code.
+
     public static string ClearDigits(string s)
     {
         Stack<char> s1 = new Stack<char>();
@@ -65,6 +68,7 @@ internal class Program
 
         return list;
     }
+    //Inorder: Left-right-root
     public void postOrder(treenode node, List<int> list)
     {
         if (node == null)
@@ -75,6 +79,7 @@ internal class Program
         postOrder(node.right, list);
         list.Add(node.val);
     }
+    //Inorder: Left-root-right
     public void inorder(treenode node, List<int> list)
     {
         if (node == null)
@@ -82,11 +87,12 @@ internal class Program
             return;
         }
         inorder(node.left, list);
-        list.Add(node.val);
+        list.Add(node.val); 
         inorder(node.right, list);
 
     }
 
+    //Inorder: root-Left-right
     public void preorder(treenode node, List<int> list)
     {
         if (node == null)
